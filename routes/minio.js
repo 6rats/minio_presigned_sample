@@ -25,7 +25,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     client.presignedPutObject('test', req.query.name, (err, url) => {
         if (err) throw err
-        res.send(url)
+        res.send({item: [url]})
     })
 });
 
